@@ -112,5 +112,5 @@ img:first-child{
     font-family: 'Radio Canada', sans-serif;
     margin: auto;
     margin-left: 40px;
-    width: max-content;
+    /*width: max-content;*/
 }
