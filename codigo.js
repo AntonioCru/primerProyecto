@@ -1,7 +1,7 @@
 document.querySelector(".button").addEventListener("click",function(){
 
   var newDate = document.getElementById("textField").value;
-  document.getElementById("dateId").innerHTML="Fecha: "+newDate;
+  //document.getElementById("dateId").innerHTML="Fecha: "+newDate;
 
   var url = "https://api.nasa.gov/planetary/apod";
   var key = "?api_key=gJ0jcjqcaEkO0uNhNGyn64S8d6XaajGiub0M4bmf";
@@ -22,7 +22,7 @@ document.querySelector(".button").addEventListener("click",function(){
 });
 
 
-function datos({date, explanation, hdurl, media_type, title, url}){
+function datos({date, explanation, hdurl, media_type, title, service_version, url}){
 
   const title1 = document.getElementById("titleId");
   title1.innerHTML = title;
@@ -32,11 +32,17 @@ function datos({date, explanation, hdurl, media_type, title, url}){
 
   const img = document.getElementById("imageId");
   const img2 = document.getElementById("bodyId");
+ 
   //const newUrl = url;
   //img.innerHTML = `src=${url}`;
   img.src = url;
- 
   img2.background = url;
+
+  const version = document.getElementById("service_versionId");
+  version.innerHTML = "Version "+service_version;
+
+  const dateF = document.getElementById("dateId");
+  dateF.innerHTML = "Date "+date;
 }
 
 
