@@ -66,7 +66,7 @@ header{
 
 .container {
     position: relative;
-    /* background-color: white; */
+    background-color: white;
     width: 90%;
     left: 70px;
     /*border: 1px solid yellow;*/
@@ -94,7 +94,7 @@ img{
     object-fit: cover;
 }
 
-img:first-child{
+.divImg:first-child{
     grid-column: 1/2;
     grid-row: 1/4;
 }
@@ -135,9 +135,7 @@ img:first-child{
         /* border: 1px solid greenyellow; */
         object-fit: none;
     }
-    img{
-        
-    }
+    
     .container{
         /* border: 2px solid green; */
         display: flex;
@@ -159,9 +157,7 @@ img:first-child{
     height: 100vh;
    }
 
-   header{
-    /* background-color: lightgray; */
-   }
+   
    
    .divDate{
     display: flex;
