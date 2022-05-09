@@ -10,7 +10,8 @@ header{
     color: white;
     margin: 0 5px;
     height: 20px;
-    background: black;
+    background: linear-gradient(to bottom, #fff, #7d7b7a);
+    border: none;
 }
 
 .button{
@@ -18,6 +19,15 @@ header{
     background: black;
     height: 27px;
     width: 75px;
+    border: none;
+}
+
+.button:hover{
+    background: linear-gradient(to bottom, #23d71d, #22c11d);
+}
+.button:active{
+    background: linear-gradient(to right, #f1800f, #cb751f);
+
 }
 
 .title{
@@ -56,7 +66,7 @@ header{
 
 .container {
     position: relative;
-    background-color: white;
+    /* background-color: white; */
     width: 90%;
     left: 70px;
     /*border: 1px solid yellow;*/
@@ -118,25 +128,39 @@ img:first-child{
 
 @media screen and (max-width: 1140px){
     body{
-        position: relative;
-        right: 8%;
+        /* border: 1px solid red; */
+        
+    }
+    .divImg{
+        /* border: 1px solid greenyellow; */
+        object-fit: none;
+    }
+    img{
+        
     }
     .container{
+        /* border: 2px solid green; */
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        padding-left: 0;
+
+        left: 2vh;
+    }
+    .title{
+        left: 0;
+        width: auto;
     }
 
    .article{
-    background-color: lightgray;
     display: flex;
+    /* border: 2px solid orange; */
+    background-color: lightgray;
+    
     flex-direction: column;
     height: 100vh;
    }
 
    header{
-    background-color: lightgray;
+    /* background-color: lightgray; */
    }
    
    .divDate{
@@ -149,7 +173,8 @@ img:first-child{
    }
 
    .date{
-       background-color: lightgray;
+       /* background-color: lightgray; */
+       padding-top: 2%;
        font-size: 4vw;
        width: 100%;
        height: 100%;
@@ -158,21 +183,26 @@ img:first-child{
    }
 
    .title{
-       
+       display: flex;
        position: relative;
-       right: auto;
+       right: 11%;
+       top: 7px;
        font-size: 4.5vw;
+       margin: 0;
    }
-   
 
    .service_version{
-    background-color: lightgray;
+    /* background-color: lightgray; */
     font-size: 3vw;
    }
    .explanation{
-       font-size: 4vw;;
+       font-size: 4vw;
+       overflow: auto;
+       
    }
    .info{
+       padding-top: 10%;
     background-color: lightgray;
    }
 }
+
