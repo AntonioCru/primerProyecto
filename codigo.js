@@ -16,6 +16,8 @@
 
 function datos({date, explanation, hdurl, media_type, title, service_version, url}){
 
+ 
+
   const title1 = document.getElementById("titleId");
   title1.innerHTML = title;
 
@@ -37,18 +39,28 @@ function datos({date, explanation, hdurl, media_type, title, service_version, ur
   dateF.innerHTML = "Date "+date;
 }
 
-const calDate = document.querySelector(".calendario");
+const calDate = document.querySelector(".impData");
 
-flatpickr("#calendarioId", {onChange: function(selectedDates, dateStr, instance) {
+function callData(dataString){
   var url = "https://api.nasa.gov/planetary/apod";
   var key = "?api_key=gJ0jcjqcaEkO0uNhNGyn64S8d6XaajGiub0M4bmf";
-  var dateUrl = "&date="+dateStr;
+  var dateUrl = "&date="+dataString;
   var urlWithKey = url+key+dateUrl;
 
   fetch(urlWithKey)
-    .then(response =>  response.json())
-    .then(data => datos(data))
-  
+  .then(response =>  response.json())
+  .then(data => datos(data))
+
+  changeDate(dataString);
+}
+
+function changeDate(dataString){
+  calDate.textContent = dataString;
+}
+
+flatpickr("#calendarioId", {onChange: function(selectedDates, dateStr, instance) {
+
+ callData(dateStr);
 }});
 
 
