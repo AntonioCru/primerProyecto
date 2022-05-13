@@ -1,4 +1,15 @@
+window.onload = function(){
+let date = new Date();
 
+let mes = date.getMonth()+1;
+let dia = date.getDate();
+let año = date.getFullYear();
+
+let dateInit = año+"-"+mes+"-"+dia;
+
+callData(dateInit);
+
+};
 
 
 // document.querySelector("#calendarioId").addEventListener("onChange",function(){
@@ -13,10 +24,10 @@
     
 // });
 
-
+let auxDate;
 function datos({date, explanation, hdurl, media_type, title, service_version, url}){
 
- 
+ auxDate = date;
 
   const title1 = document.getElementById("titleId");
   title1.innerHTML = title;
@@ -41,7 +52,9 @@ function datos({date, explanation, hdurl, media_type, title, service_version, ur
 
 const calDate = document.querySelector(".impData");
 
-function callData(dataString){
+
+
+function callData(dataString){         
   var url = "https://api.nasa.gov/planetary/apod";
   var key = "?api_key=gJ0jcjqcaEkO0uNhNGyn64S8d6XaajGiub0M4bmf";
   var dateUrl = "&date="+dataString;
@@ -52,11 +65,17 @@ function callData(dataString){
   .then(data => datos(data))
 
   changeDate(dataString);
+
+  
 }
+
+
 
 function changeDate(dataString){
   calDate.textContent = dataString;
 }
+
+
 
 flatpickr("#calendarioId", {onChange: function(selectedDates, dateStr, instance) {
 
