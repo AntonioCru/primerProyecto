@@ -142,10 +142,17 @@ img{
 
 
 @media screen and (max-width: 1140px){
-    body{
-        /* border: 1px solid red; */
-        
+    .divDate {
+        display: none;
     }
+    button{
+        display: none;
+    }
+    .impData{
+        display: flex;
+        width: 50%;
+    }
+    
     .divImg{
         /* border: 1px solid greenyellow; */
         object-fit: none;
@@ -174,14 +181,14 @@ img{
 
    
    
-   .divDate{
+   /* .divDate{
     display: flex;
     writing-mode: horizontal-tb;
     text-align: start;
     align-content: center;
     background-color: lightgray;
     height: 75px;
-   }
+   } */
 
    .date{
        /* background-color: lightgray; */
